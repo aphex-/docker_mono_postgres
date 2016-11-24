@@ -1,0 +1,32 @@
+version: '2'
+services:
+
+  app-service:
+    build:
+      context: ./app
+    image: battle-app-image
+    container_name: battle-app-container
+    ports:
+      - "80:80"
+    networks:
+      - battle-network
+    volumes:
+      - ../source/app:/var/www
+
+  db-service:
+    build:
+      context: ./db
+    image: battle-db-image
+    container_name: battle-db-container
+    ports:
+      - "5432:5432"
+    networks:
+      - battle-network
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: battle
+
+networks:
+  battle-network:
+    driver: bridge
