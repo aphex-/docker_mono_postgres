@@ -18,10 +18,10 @@ docker-compose run
 ## Usage
 If your containers are running you can visit a sample page at: **localhost:80**
 This page is located at the container **mono-app-container** in the directory **/var/www**.
-This directory is mounted to the host via *source/app*. You can live edit the sample file and 
+This directory is mounted to the host via **source/app**. You can live edit the sample file and 
 immediately view the results.
-To can connect your DB administration tool to the port **5432**. The password and user is
-set in the docker-compose build process and can be edited in the *docker-compose.yml* file.
+To connect your DB administration tool use the port **5432**. The password and user is
+set in the docker-compose build process and can be edited in the **docker-compose.yml** file.
 
 ## Postgres driver
 The mono-app-image contains a Npgsql Postgres driver that is installed in the file **/app/Dockerfile**
